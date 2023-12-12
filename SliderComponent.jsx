@@ -16,6 +16,8 @@ export default function SliderComponent({
 }){
     return (
         <Stack my={1.4}>
+            <Typography variant='subtitle2'>{label}</Typography>
+            <Typography variant='h5'>${amount}</Typography>
             <Slider  
                 min={min} 
                 max={max}
@@ -27,6 +29,7 @@ export default function SliderComponent({
                 onChange={onChange}
                 value={value}
             />
+            <Typography></Typography>
         </Stack>
     )
 }

@@ -10,6 +10,8 @@ export default function SliderSelect(){
                 defaultValue={2000} 
                 step={100}
                 onChange={(e, value) => console.log(value)}
+                label="Home Value"
+                amount={3000}
             />
             <SliderComponent min={100} max={200} defaultValue={150}/>
             <SliderComponent min={0} max={10} defaultValue={3}/>
