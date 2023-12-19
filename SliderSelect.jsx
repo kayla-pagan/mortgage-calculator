@@ -1,13 +1,13 @@
 import React from "react";
 import SliderComponent from "./Common/SliderComponent";
 
-export default function SliderSelect(){
+export default function SliderSelect({data, setData}){
     return (
         <React.Fragment>
             <SliderComponent 
                 min={50000} 
                 max={500000} 
-                defaultValue={200000} 
+                defaultValue={data.homeValue} 
                 step={10000}
                 onChange={(e, value) => console.log(value)}
                 label="Home Value"
@@ -17,7 +17,7 @@ export default function SliderSelect(){
             <SliderComponent 
                 min={0} 
                 max={50000} 
-                defaultValue={5000} 
+                defaultValue={data.downPayment} 
                 step={5000}
                 onChange={(e, value) => console.log(value)}
                 label="Down Payment"
@@ -27,7 +27,7 @@ export default function SliderSelect(){
             <SliderComponent 
                 min={50000} 
                 max={500000} 
-                defaultValue={195000} 
+                defaultValue={data.loanAmount} 
                 step={10000}
                 onChange={(e, value) => console.log(value)}
                 label="Loan Amount"
@@ -38,7 +38,7 @@ export default function SliderSelect(){
             <SliderComponent 
                 min={2} 
                 max={18} 
-                defaultValue={5} 
+                defaultValue={data.interestRate} 
                 step={0.5}
                 onChange={(e, value) => console.log(value)}
                 label="Interest Rate"

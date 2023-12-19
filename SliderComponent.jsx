@@ -15,7 +15,7 @@ export default function SliderComponent({
     step
 }){
     return (
-        <React.Fragment>
+        <Stack my={1.4}>
             <Stack gap={1}>
                 <Typography variant='subtitle2'>{label}</Typography>
                 <Typography variant='h5'>{unit}{amount}</Typography>
@@ -32,9 +32,9 @@ export default function SliderComponent({
                 value={value}
             />
             <Stack direction='row' justifyContent='space-between'>
-                <Typography variant='caption' color='text.secondary'>{unit}{min}</Typography>
-                <Typography variant='caption' color='text.secondary'>{unit}{max}</Typography>
+                <Typography variant='caption' color='text.secondary'>{unit} {min}</Typography>
+                <Typography variant='caption' color='text.secondary'>{unit} {max}</Typography>
             </Stack>
-        </React.Fragment>
+        </Stack>
     )
 }
