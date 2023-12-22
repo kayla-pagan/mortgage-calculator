@@ -37,24 +37,36 @@ export default function SliderSelect({data, setData}){
                 unit='$'
             />
             <SliderComponent 
+                label="Loan Amount"
                 min={50000} 
                 max={500000} 
                 defaultValue={data.loanAmount} 
+                value={data.loanAmount}
                 step={10000}
-                onChange={(e, value) => console.log(value)}
-                label="Loan Amount"
-                amount={195000}
+                onChange={(e, value) => {
+                    setData(prevData => ({
+                        ...prevData,
+                        loanAmount: value
+                    }))
+                }}
+                amount={data.loanAmount}
                 unit='$'
             />
 
-            <SliderComponent 
+            <SliderComponent
+                label="Interest Rate" 
                 min={2} 
                 max={18} 
                 defaultValue={data.interestRate} 
+                value={data.interestRate}
                 step={0.5}
-                onChange={(e, value) => console.log(value)}
-                label="Interest Rate"
-                amount={5}
+                onChange={(e, value) => {
+                    setData(prevData => ({
+                        ...prevData,
+                        interestRate: value
+                    }))
+                }}
+                amount={data.interestRate}
                 unit='%'
             />
         </React.Fragment>
