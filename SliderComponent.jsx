@@ -12,7 +12,8 @@ export default function SliderComponent({
     onChange,
     amount,
     value,
-    step
+    step,
+    name
 }){
     return (
         <Stack my={1.4}>
@@ -24,6 +25,7 @@ export default function SliderComponent({
                 min={min} 
                 max={max}
                 defaultValue={defaultValue}
+                name={name}
                 aria-label='Default'
                 valueLabelDisplay='auto'
                 marks
