@@ -21,13 +21,19 @@ export default function SliderSelect({data, setData}){
                 unit='$'
             />
             <SliderComponent 
-                min={0} 
-                max={50000} 
-                defaultValue={data.downPayment} 
-                step={5000}
-                onChange={(e, value) => console.log(value)}
                 label="Down Payment"
-                amount={5000}
+                min={0} 
+                max={100000} 
+                defaultValue={data.downPayment} 
+                value={data.downPayment}
+                step={5000}
+                onChange={(e, value) => {
+                    setData(prevData => ({
+                        ...prevData,
+                        downPayment: value
+                    }))
+                }}
+                amount={data.downPayment}
                 unit='$'
             />
             <SliderComponent 
