@@ -5,13 +5,19 @@ export default function SliderSelect({data, setData}){
     return (
         <React.Fragment>
             <SliderComponent 
+                label="Home Value"
                 min={50000} 
                 max={500000} 
                 defaultValue={data.homeValue} 
+                value={data.homeValue}
                 step={10000}
-                onChange={(e, value) => console.log(value)}
-                label="Home Value"
-                amount={200000}
+                onChange={(e, value) => {
+                    setData(prevData => ({
+                        ...prevData,
+                        homeValue: value
+                    }))
+                }}
+                amount={data.homeValue}
                 unit='$'
             />
             <SliderComponent 
