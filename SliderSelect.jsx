@@ -32,7 +32,7 @@ export default function SliderSelect({data, setData}){
                 label="Down Payment"
                 name="downPayment"
                 min={0} 
-                max={100000} 
+                max={data.homeValue} 
                 defaultValue={data.downPayment} 
                 value={data.downPayment}
                 step={5000}
@@ -44,7 +44,7 @@ export default function SliderSelect({data, setData}){
                 label="Loan Amount"
                 name="loanAmount"
                 min={50000} 
-                max={500000} 
+                max={data.homeValue} 
                 defaultValue={data.loanAmount} 
                 value={data.loanAmount}
                 step={10000}

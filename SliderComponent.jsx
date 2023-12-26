@@ -21,17 +21,17 @@ export default function SliderComponent({
                 <Typography variant='subtitle2'>{label}</Typography>
                 <Typography variant='h5'>{unit}{amount}</Typography>
             </Stack>
-            <Slider  
+            <Slider
+                name={name}  
                 min={min} 
                 max={max}
                 defaultValue={defaultValue}
-                name={name}
-                aria-label='Default'
-                valueLabelDisplay='auto'
-                marks
+                value={value}
                 step={step}
                 onChange={onChange}
-                value={value}
+                aria-label='Default'
+                valueLabelDisplay='auto'
+                marks  
             />
             <Stack direction='row' justifyContent='space-between'>
                 <Typography variant='caption' color='text.secondary'>{unit} {min}</Typography>
