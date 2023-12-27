@@ -8,10 +8,27 @@ export default function SliderSelect({data, setData}){
         
         const {name, value} = e.target
 
-        setData(prevData => ({
-            ...prevData,
-            [name]: value
-        }))
+        if(name === "homeValue"){
+            setData(prevData => ({
+                ...prevData,
+                downPayment: value * 0.05,
+                loanAmount: value * 0.95,
+                homeValue: value,
+            }))
+        } 
+        else if (name === "downPayment"){
+            setData(prevData => ({
+                ...prevData,
+                loanAmount: data.homeValue - value,
+                downPayment: value,
+            }))
+        } else if(name === "loanAmount"){
+            setData(prevData => ({
+                ...prevData,
+                downPayment: data.homeValue - value,
+                loanAmount: value,
+            }))
+        }
     }
 
     return (
@@ -33,7 +50,7 @@ export default function SliderSelect({data, setData}){
                 name="downPayment"
                 min={0} 
                 max={data.homeValue} 
-                defaultValue={data.downPayment} 
+                defaultValue={data.homeValue * 0.05} 
                 value={data.downPayment}
                 step={5000}
                 onChange={(e) => handleChange(e)}
@@ -45,7 +62,7 @@ export default function SliderSelect({data, setData}){
                 name="loanAmount"
                 min={50000} 
                 max={data.homeValue} 
-                defaultValue={data.loanAmount} 
+                defaultValue={data.homeValue * 0.95} 
                 value={data.loanAmount}
                 step={10000}
                 onChange={(e) => handleChange(e)}
