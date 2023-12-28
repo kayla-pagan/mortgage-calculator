@@ -15,8 +15,7 @@ export default function SliderSelect({data, setData}){
                 loanAmount: value * 0.95,
                 homeValue: value,
             }))
-        } 
-        else if (name === "downPayment"){
+        } else if (name === "downPayment"){
             setData(prevData => ({
                 ...prevData,
                 loanAmount: data.homeValue - value,
@@ -27,6 +26,11 @@ export default function SliderSelect({data, setData}){
                 ...prevData,
                 downPayment: data.homeValue - value,
                 loanAmount: value,
+            }))
+        } else if(name === "interestRate"){
+            setData(prevData => ({
+                ...prevData,
+                interestRate: value
             }))
         }
     }
@@ -41,7 +45,7 @@ export default function SliderSelect({data, setData}){
                 defaultValue={data.homeValue} 
                 value={data.homeValue}
                 step={10000}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
                 amount={data.homeValue}
                 unit='$'
             />
@@ -50,10 +54,10 @@ export default function SliderSelect({data, setData}){
                 name="downPayment"
                 min={0} 
                 max={data.homeValue} 
-                defaultValue={data.homeValue * 0.05} 
+                defaultValue={data.downPayment} 
                 value={data.downPayment}
                 step={5000}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
                 amount={data.downPayment}
                 unit='$'
             />
@@ -62,10 +66,10 @@ export default function SliderSelect({data, setData}){
                 name="loanAmount"
                 min={50000} 
                 max={data.homeValue} 
-                defaultValue={data.homeValue * 0.95} 
+                defaultValue={data.loanAmount} 
                 value={data.loanAmount}
                 step={10000}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
                 amount={data.loanAmount}
                 unit='$'
             />
@@ -78,7 +82,7 @@ export default function SliderSelect({data, setData}){
                 defaultValue={data.interestRate} 
                 value={data.interestRate}
                 step={0.5}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
                 amount={data.interestRate}
                 unit='%'
             />
