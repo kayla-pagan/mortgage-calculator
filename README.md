@@ -22,4 +22,4 @@ To cater to a diverse range of users and scenarios, the React Mortgage Calculato
 
 With its modern and efficient design, the React Mortgage Calculator project aims to empower users with the information they need to make informed decisions about their home financing options. Whether you are a first-time homebuyer or a seasoned homeowner, my calculator is here to simplify the mortgage planning process.
 
-[Deployed Project]: https://friendly-profiterole-9cdd4f.netlify.app
+[Deployed Project]https://friendly-profiterole-9cdd4f.netlify.app
